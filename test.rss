@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <category term="AskProgramming" label="r/AskProgramming"/>
+    <updated>2020-11-10T11:58:37+00:00</updated>
+    <icon>https://www.redditstatic.com/icon.png/</icon>
+    <id>/r/AskProgramming/comments/jrhali/would_anyone_be_that_kind_so_as_to_explain_to_me/.rss</id>
+    <link rel="self" href="https://www.reddit.com/r/AskProgramming/comments/jrhali/would_anyone_be_that_kind_so_as_to_explain_to_me/.rss" type="application/atom+xml" /><link rel="alternate" href="https://www.reddit.com/r/AskProgramming/comments/jrhali/would_anyone_be_that_kind_so_as_to_explain_to_me/" type="text/html" />
+    <logo>https://e.thumbs.redditmedia.com/Wg8yGWbmYak4fsQL.png</logo>
+    <subtitle>A subreddit for all your programming questions.</subtitle>
+    <title>Would anyone be that kind so as to explain to me the main differences between a web developer, a web designer; a multimedia designer and FE? Thanks in advance 👌🏻 : AskProgramming</title>
+    <entry>
+        <author>
+            <name>/u/Verzweiflungforscher</name>
+            <uri>https://www.reddit.com/user/Verzweiflungforscher</uri>
+        </author>
+        <category term="AskProgramming" label="r/AskProgramming"/>
+        <content type="html">
+            &amp;#32; submitted by &amp;#32; &lt;a href=&quot;https://www.reddit.com/user/Verzweiflungforscher&quot;&gt; /u/Verzweiflungforscher &lt;/a&gt; &lt;br/&gt; &lt;span&gt;&lt;a href=&quot;https://www.reddit.com/r/AskProgramming/comments/jrhali/would_anyone_be_that_kind_so_as_to_explain_to_me/&quot;&gt;[link]&lt;/a&gt;&lt;/span&gt; &amp;#32; &lt;span&gt;&lt;a href=&quot;https://www.reddit.com/r/AskProgramming/comments/jrhali/would_anyone_be_that_kind_so_as_to_explain_to_me/&quot;&gt;[comments]&lt;/a&gt;&lt;/span&gt;
+        </content>
+            <id>t3_jrhali</id>
+            <link href="https://www.reddit.com/r/AskProgramming/comments/jrhali/would_anyone_be_that_kind_so_as_to_explain_to_me/" />
+            <updated>2020-11-10T08:21:03+00:00</updated>
+            <title>Would anyone be that kind so as to explain to me the main differences between a web developer, a web designer; a multimedia designer and FE? Thanks in advance 👌🏻</title>
+        </entry><entry>
+            <author
+            ><name>/u/McMasilmof</name>
+            <uri>https://www.reddit.com/user/McMasilmof</uri>
+        </author>
+        <category term="AskProgramming" label="r/AskProgramming" />
+        <content type="html">
+            &lt;!-- SC_OFF --&gt;&lt;div class=&quot;md&quot;&gt;&lt;p&gt;Web developer: coder/programmer who is specialised in HTML/JavaScript/css and common frontend frameworks like angular or react.&lt;/p&gt; &lt;p&gt;Web designer: a disigner specialised in website design. This can be completley non technical.&lt;/p&gt; &lt;p&gt;Multimedia designer: a designer focused on multimedia, can include web design and other media.&lt;/p&gt; &lt;p&gt;FE is frontend? So a frontend developer. A coder who can develop GUIs(this can be a website, or any other GUI)&lt;/p&gt; &lt;/div&gt;&lt;!-- SC_ON --&gt;
+        </content>
+            <id>t1_gbt9tjx</id>
+            <link href="https://www.reddit.com/r/AskProgramming/comments/jrhali/would_anyone_be_that_kind_so_as_to_explain_to_me/gbt9tjx/"/>
+            <updated>2020-11-10T09:19:01+00:00</updated>
+            <title>/u/McMasilmof on Would anyone be that kind so as to explain to me the main differences between a web developer, a web designer; a multimedia designer and FE? Thanks in advance 👌🏻</title>
+        </entry><entry>
+            <author>
+                <name>/u/stratocastom</name>
+                <uri>https://www.reddit.com/user/stratocastom</uri>
+            </author>
+            <category term="AskProgramming" label="r/AskProgramming" />
+            <content type="html">
+                &lt;!-- SC_OFF --&gt;&lt;div class=&quot;md&quot;&gt;&lt;p&gt;Web development has traditionally been quite a multi-discipline area, often spanning from initial design/art direction through the actual build, often with one person doing it all (due to the relative simplicity of creating &amp;#39;websites&amp;#39;). Now things are way more complex, and a lot of the more specialised software development roles are found in the web space.&lt;/p&gt; &lt;p&gt;This being said, you&amp;#39;ll get a very wide variety of people describing themselves as &amp;#39;web developers&amp;#39; from hardcore coders to front-end devs, so it&amp;#39;s a bit of a minefield!&lt;/p&gt; &lt;p&gt;&lt;strong&gt;Developer&lt;/strong&gt; signifies coding, be it JavaScript/PHP or other related languages (and is often also applied to those who don&amp;#39;t code &amp;#39;behaviour&amp;#39;, i.e. HTML/CSS). Whereas &lt;strong&gt;designer&lt;/strong&gt; refers to the graphics/art direction and is non-technical.&lt;/p&gt; &lt;/div&gt;&lt;!-- SC_ON --&gt;
+            </content>
+                <id>t1_gbtfza1</id>
+                <link href="https://www.reddit.com/r/AskProgramming/comments/jrhali/would_anyone_be_that_kind_so_as_to_explain_to_me/gbtfza1/"/>
+                <updated>2020-11-10T11:13:54+00:00</updated>
+                <title>/u/stratocastom on Would anyone be that kind so as to explain to me the main differences between a web developer, a web designer; a multimedia designer and FE? Thanks in advance 👌🏻</title>
+            </entry>
+</feed>

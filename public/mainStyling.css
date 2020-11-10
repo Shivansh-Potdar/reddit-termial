@@ -1,0 +1,12 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+input {
+    border: none;
+    background: black;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    outline: none;
+    color: #fff;
+}
