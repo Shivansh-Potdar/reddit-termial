@@ -37,6 +37,7 @@ function CheckForcommands(props){
 
 function MyInput() {
 
+    let myTopAr = []
     async function scrapeSubreddit() {
         const r = new snoowrap({
             userAgent: 'A random string.',
@@ -47,7 +48,7 @@ function MyInput() {
     
         const subreddit = await r.getSubreddit(document.getElementById("rslashval").value);
         const newPosts = await subreddit.getNew({time: 'week', limit: 5});
-        const topPosts = await subreddit.getTop({time: 'week', limit: 5});
+        const topPosts = await subreddit.getTop({time: 'week', limit: 50});
     
         let topdata = [];
         let newdata = [];
@@ -63,7 +64,7 @@ function MyInput() {
         });
         console.log(topdata)
     
-        for (let x = 0; x < topdata.length; x++) {
+    /*    for (let x = 0; x < topdata.length; x++) {
             console.log()
             console.log()
 
@@ -115,7 +116,22 @@ function MyInput() {
                             </p>
                         </div>
             ReactDOM.render(ele, document.getElementById("r-slashdisplay"));
-        }
+        } */
+
+        myTopAr.push(topdata)
+        ReactDOM.render(topdata.map((namae, index) => (
+                            <li key={index}>
+                                <p>
+                                    "Title: "{namae.title}
+                                </p>
+                                <p>
+                                    "Score: "{namae.score}
+                                </p>
+                                <p>
+                                    "Text: "{namae.text}
+                                </p>
+                            </li>
+                        )), document.getElementById("root-ul"))
     };
 
     useEffect(() => {
@@ -147,6 +163,8 @@ function MyInput() {
                                         <form> 
                                             C://desktop/users/r/<input type="text" id="rslashval" placeholder="subreddit name"/>
                                         </form>
+                                        <ul id="root-ul">
+                                        </ul>
                                     </Delayed>
                                 </Delayed>
                             </Delayed>              
@@ -167,8 +185,8 @@ render() {
                 <h1>Reddit Terminal</h1>
                     <ul>
                         <li>type -begin</li>
-                        <li>get the top 5 posts of subreddit</li>
-                        <li>or get new 5 posts</li>
+                        <li>get the top posts of subreddit</li>
+                        <li>or get new posts</li>
                         <li>do not forget only post text can be read</li>
                     </ul>
                     <CheckForcommands plc="command"/>
