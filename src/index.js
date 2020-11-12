@@ -36,8 +36,6 @@ function CheckForcommands(props){
 }
 
 function MyInput() {
-
-    let myTopAr = []
     async function scrapeSubreddit() {
         const r = new snoowrap({
             userAgent: 'A random string.',
@@ -46,8 +44,11 @@ function MyInput() {
             refreshToken: '244083766827-hzwx_uMei4nOCtE9Y-TnypmVa_COqA'
         });
     
-        const subreddit = await r.getSubreddit(document.getElementById("rslashval").value);
-        const newPosts = await subreddit.getNew({time: 'week', limit: 5});
+
+        const inputVal = document.getElementById("rslashval").value.split("-");
+
+        const subreddit = await r.getSubreddit(inputVal[2]);
+        const newPosts = await subreddit.getNew({time: 'week', limit: 50});
         const topPosts = await subreddit.getTop({time: 'week', limit: 50});
     
         let topdata = [];
@@ -62,64 +63,39 @@ function MyInput() {
                 id: post.id
             })
         });
+
+        newPosts.forEach((post) =>{
+            newdata.push({
+                link: post.url,
+                title: post.title,
+                text: post.selftext,
+                score: post.score,
+                id: post.id
+            })
+        })
         console.log(topdata)
-    
-    /*    for (let x = 0; x < topdata.length; x++) {
-            console.log()
-            console.log()
+        console.log(newdata)
 
-            const ele = <div>
-                            <p>
-                            "Title: "    {topdata[0]["title"].toString()}
-                            </p>
-                            <p>
-                            "Score: " {topdata[0]["score"].toString()}
-                            </p>
-                            <p>
-                                {topdata[0]["text"].toString()}
-                            </p>
-                            <p>
-                            "Title: "    {topdata[1]["title"].toString()}
-                            </p>
-                            <p>
-                            "Score: " {topdata[1]["score"].toString()}
-                            </p>
-                            <p>
-                                {topdata[1]["text"].toString()}
-                            </p>
-                            <p>
-                            "Title: "    {topdata[2]["title"].toString()}
-                            </p>
-                            <p>
-                            "Score: " {topdata[2]["score"].toString()}
-                            </p>
-                            <p>
-                                {topdata[2]["text"].toString()}
-                            </p>
-                            <p>
-                            "Title: "    {topdata[3]["title"].toString()}
-                            </p>
-                            <p>
-                            "Score: " {topdata[3]["score"].toString()}
-                            </p>
-                            <p>
-                                {topdata[3]["text"].toString()}
-                            </p>
-                            <p>
-                            "Title: "    {topdata[4]["title"].toString()}
-                            </p>
-                            <p>
-                            "Score: " {topdata[4]["score"].toString()}
-                            </p>
-                            <p>
-                                {topdata[4]["text"].toString()}
-                            </p>
-                        </div>
-            ReactDOM.render(ele, document.getElementById("r-slashdisplay"));
-        } */
+        
 
-        myTopAr.push(topdata)
-        ReactDOM.render(topdata.map((namae, index) => (
+        if (inputVal[1] === "new") {
+            ReactDOM.render(newdata.map((namae, index) => (
+                <li key={index}>
+                    <p>
+                        "Title: "{namae.title}
+                    </p>
+                    <p>
+                        "Score: "{namae.score}
+                    </p>
+                    <p>
+                        "Text: "{namae.text}
+                    </p>
+                </li>
+            )), document.getElementById("root-ul"))
+        }
+
+        if(inputVal[1] === "top"){
+            ReactDOM.render(topdata.map((namae, index) => (
                             <li key={index}>
                                 <p>
                                     "Title: "{namae.title}
@@ -132,6 +108,7 @@ function MyInput() {
                                 </p>
                             </li>
                         )), document.getElementById("root-ul"))
+        }
     };
 
     useEffect(() => {
@@ -185,6 +162,8 @@ render() {
                 <h1>Reddit Terminal</h1>
                     <ul>
                         <li>type -begin</li>
+                        <li>format as: -top/new-subredditnme</li>
+                        <li>sample: -top-askreddit</li>
                         <li>get the top posts of subreddit</li>
                         <li>or get new posts</li>
                         <li>do not forget only post text can be read</li>
@@ -199,6 +178,6 @@ render() {
 
 //Render
 ReactDOM.render(
-    <MainBoad name="Shivansh" />,
+    <MainBoad />,
     document.getElementById("root")
 );
