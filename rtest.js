@@ -1,5 +1,7 @@
-const { Comment } = require('snoowrap');
 const snoowrap = require('snoowrap');
+const jsdom = require("./node_modules/jsdom");
+const { window } = new jsdom.JSDOM('<body></body>');
+const $ = require('jquery')(window);
 
 async function scrapeSubreddit() {
     const r = new snoowrap({
@@ -24,14 +26,30 @@ async function scrapeSubreddit() {
             score: post.score,
             id: post.id
         })
-    });
-    console.log(topdata)
+    })
 
-    for (let x = 0; x < topdata.length; x++) {
-        console.log(topdata[x]["title"].toString() + '\n')
-        console.log(topdata[x]["text"].toString()+'\n')
-        
-    }
+    /* $.getJSON("https://www.reddit.com/r/darkjokes/comments/jriz83/.json", function (data){
+        $.each(data[1].data.children, function (i, item) {
+            var comment = item.data.body
+            var author = item.data.author
+            var postcomment = '<p>[Author]' + author + '<br>' + comment + '</p>'
+            newdata.append(postcomment)
+        });
+    }); */
+
+    $.ajax({
+        dataType: "json",
+        url: "https://www.reddit.com/r/darkjokes/comments/jriz83/.json",
+    }).done((data) => {
+        $.each(data[1].data.children, function (i, item) {
+            var comment = item.data.body
+            var author = item.data.author
+            var postcomment = '<p>[Author]' + author + '<br>' + comment + '</p>'
+            console.log(postcomment)
+        });
+    })
+
+    console.log(newdata)
 };
 
 scrapeSubreddit();
