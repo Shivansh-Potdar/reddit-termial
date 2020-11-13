@@ -28,15 +28,6 @@ async function scrapeSubreddit() {
         })
     })
 
-    /* $.getJSON("https://www.reddit.com/r/darkjokes/comments/jriz83/.json", function (data){
-        $.each(data[1].data.children, function (i, item) {
-            var comment = item.data.body
-            var author = item.data.author
-            var postcomment = '<p>[Author]' + author + '<br>' + comment + '</p>'
-            newdata.append(postcomment)
-        });
-    }); */
-
     $.ajax({
         dataType: "json",
         url: "https://www.reddit.com/r/darkjokes/comments/jriz83/.json",

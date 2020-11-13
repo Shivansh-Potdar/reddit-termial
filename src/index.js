@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { useEffect } from 'react';
 import Delayed from './Delayed'
@@ -36,6 +36,7 @@ function CheckForcommands(props){
 }
 
 function MyInput() {
+
     async function scrapeSubreddit() {
         const r = new snoowrap({
             userAgent: 'A random string.',
@@ -49,7 +50,13 @@ function MyInput() {
 
         const subreddit = await r.getSubreddit(inputVal[2]);
         const newPosts = await subreddit.getNew({time: 'week', limit: 50});
-        const topPosts = await subreddit.getTop({time: 'week', limit: 50});
+        const topPosts = await subreddit.getTop({time: 'week', limit: 50}).catch({
+            url: null,
+            title: "Wrong name",
+            text: "Please Try Again",
+            score: 0,
+            id: null
+        });
     
         let topdata = [];
         let newdata = [];
@@ -73,6 +80,7 @@ function MyInput() {
                 id: post.id
             })
         })
+
         console.log(topdata)
         console.log(newdata)
 
@@ -80,7 +88,7 @@ function MyInput() {
 
         if (inputVal[1] === "new") {
             ReactDOM.render(newdata.map((namae, index) => (
-                <li key={index}>
+                <li key={index}> {newdata.indexOf(namae)}
                     <p>
                         "Title: "{namae.title}
                     </p>
