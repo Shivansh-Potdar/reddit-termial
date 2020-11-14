@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { useEffect } from 'react';
 import Delayed from './Delayed'
@@ -84,8 +84,6 @@ function MyInput() {
         console.log(topdata)
         console.log(newdata)
 
-        
-
         if (inputVal[1] === "new") {
             ReactDOM.render(newdata.map((namae, index) => (
                 <li key={index}> {newdata.indexOf(namae)}
@@ -98,24 +96,30 @@ function MyInput() {
                     <p>
                         "Text: "{namae.text}
                     </p>
+                    <p id="reddit-link">
+                        "Link: " <a>{namae.link}</a>
+                    </p>
                 </li>
             )), document.getElementById("root-ul"))
         }
 
         if(inputVal[1] === "top"){
             ReactDOM.render(topdata.map((namae, index) => (
-                            <li key={index}>
-                                <p>
-                                    "Title: "{namae.title}
-                                </p>
-                                <p>
-                                    "Score: "{namae.score}
-                                </p>
-                                <p>
-                                    "Text: "{namae.text}
-                                </p>
-                            </li>
-                        )), document.getElementById("root-ul"))
+                <li key={index}>{topdata.indexOf(namae)}
+                    <p>
+                        "Title: "{namae.title}
+                    </p>
+                    <p>
+                        "Score: "{namae.score}
+                    </p>
+                    <p>
+                        "Text: "{namae.text}
+                    </p>
+                    <p id="reddit-link">
+                        "Link: " <a>{namae.link}</a>
+                    </p>
+                </li>
+            )), document.getElementById("root-ul"))
         }
     };
 
@@ -149,6 +153,7 @@ function MyInput() {
                                             C://desktop/users/r/<input type="text" id="rslashval" placeholder="subreddit name"/>
                                         </form>
                                         <ul id="root-ul">
+                                            <div id="root-comm"/>
                                         </ul>
                                     </Delayed>
                                 </Delayed>
@@ -162,7 +167,7 @@ function MyInput() {
     );
 }
 
-class MainBoad extends React.Component {
+class MainBoad extends Component {
 
 render() {
         return (
@@ -170,7 +175,7 @@ render() {
                 <h1>Reddit Terminal</h1>
                     <ul>
                         <li>type -begin</li>
-                        <li>format as: -top/new-subredditnme</li>
+                        <li>format as: -top/new-subreddit</li>
                         <li>sample: -top-askreddit</li>
                         <li>get the top posts of subreddit</li>
                         <li>or get new posts</li>
@@ -181,8 +186,6 @@ render() {
         );
 }
 }        
-
-
 
 //Render
 ReactDOM.render(

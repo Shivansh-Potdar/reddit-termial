@@ -18,7 +18,7 @@ async function scrapeSubreddit() {
     let topdata = [];
     let newdata = [];
 
-    topPosts.forEach((post) => {
+    /* topPosts.forEach((post) => {
         topdata.push({
             link: post.url,
             title: post.title,
@@ -26,21 +26,19 @@ async function scrapeSubreddit() {
             score: post.score,
             id: post.id
         })
-    })
+    }) */
 
     $.ajax({
         dataType: "json",
-        url: "https://www.reddit.com/r/darkjokes/comments/jriz83/.json",
+        url: "https://www.reddit.com/r/AmItheAsshole/comments/jtbeic/aita_for_not_letting_my_parents_stay_with_my_kids/.json",
     }).done((data) => {
         $.each(data[1].data.children, function (i, item) {
             var comment = item.data.body
             var author = item.data.author
             var postcomment = '<p>[Author]' + author + '<br>' + comment + '</p>'
-            console.log(postcomment)
+            console.log(postcomment);
         });
     })
-
-    console.log(newdata)
 };
 
 scrapeSubreddit();
