@@ -41,8 +41,8 @@ function MyInput() {
         const r = new snoowrap({
             userAgent: 'A random string.',
             clientId: 'uYcds9ym9IRLBg',
-            clientSecret: 'jFkboj6UTkmpVUaSmPNnfK9S5Ppi7w',
-            refreshToken: '244083766827-hzwx_uMei4nOCtE9Y-TnypmVa_COqA'
+            clientSecret: 'your secret',
+            refreshToken: 'your token'
         });
     
 
